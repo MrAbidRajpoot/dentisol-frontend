@@ -46,7 +46,7 @@ const Footer = () => {
               <h4 className="contact-location">Operation (Pakistan)</h4>
               <div className="contact-details">
                 <p>📞 +92-307-941-8709</p>
-                <p>📧 info@orthoalignsolution.com</p>
+                <p>📧 info@dentisol.com</p>
                 <p>📍 Lahore, Pakistan</p>
               </div>
             </div>
@@ -55,7 +55,7 @@ const Footer = () => {
               <h4 className="contact-location">Headquarter (UAE)</h4>
               <div className="contact-details">
                 <p>📞 +971-XX-XXX-XXXX</p>
-                <p>📧 uae@orthoalignsolution.com</p>
+                <p>📧 uae@dentisol.com</p>
                 <p>📍 Dubai, UAE</p>
               </div>
             </div>
@@ -74,10 +74,10 @@ const Footer = () => {
 
         <div className="footer-bottom">
           <div className="footer-logo">
-            <img src="/images/logo.svg" alt="OrthoAlign Solution" />
+            <img src="/images/dentisole.svg" alt="Dentisol" />
           </div>
           <p className="copyright">
-            © 2025 OrthoAlign Solution. All rights reserved.
+            © 2025 Dentisol. All rights reserved.
           </p>
         </div>
       </div>

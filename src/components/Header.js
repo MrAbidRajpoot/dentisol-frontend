@@ -13,7 +13,7 @@ const Header = () => {
           <div className="top-bar-content">
             <div className="contact-info">
               <span className="phone">📞 +92-307-941-8709</span>
-              <span className="email">✉️ info@orthoalignsolution.com</span>
+              <span className="email">✉️ info@dentisol.com</span>
             </div>
             <div className="social-links">
               <a href="#" className="social-link">📘</a>
@@ -30,7 +30,7 @@ const Header = () => {
         <div className="container">
           <div className="nav-content">
             <div className="logo">
-              <img src="/images/logo.svg" alt="OrthoAlign Solution" />
+              <img src="/images/dentisole.svg" alt="Dentisol" />
             </div>
 
             <ul className="nav-menu">
