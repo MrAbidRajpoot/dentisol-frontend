@@ -1,46 +1,54 @@
 import React from 'react';
-import './Services.css';
+import { FaCrown, FaLaptop, FaTeeth, FaCheckCircle } from 'react-icons/fa';
 
 const Services = () => {
+  const services = [
+    {
+      icon: <FaCrown />,
+      title: "Porcelain-Fused-to-Metal (PFM) Crown & Bridge",
+      description: "Precision. Strength. Aesthetics. High-quality crown and bridge restorations designed for accuracy, durability, and natural beauty.",
+      image: "/porcelainFusedMetalCrowns.jpg"
+    },
+    {
+      icon: <FaLaptop />,
+      title: "CAD/CAM Digital Solutions",
+      description: "Advanced digital workflow combining CAD/CAM technology with expert craftsmanship for precision-engineered restorations.",
+      image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      icon: <FaTeeth />,
+      title: "Clear Aligner Treatment Planning",
+      description: "Complete digital clear aligner set-up solutions for predictable, efficient, and esthetically pleasing orthodontic treatments.",
+      image: "/clear-aligner-treatment-plans-scaled.jpg"
+    },
+    {
+      icon: <FaCheckCircle />,
+      title: "Expert Finishing & Quality Control",
+      description: "Artistic detail, layering ceramics, perfecting morphology, and ensuring lifelike translucency with strict quality checks.",
+      image: "https://images.unsplash.com/photo-1582719471384-894fbb16e074?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+    }
+  ];
+
   return (
-    <section className="services" id="services">
-      <div className="container">
-        <div className="services-content">
-          <h2 className="services-title">Discover Our Orthodontic Solutions</h2>
-
-          <div className="services-grid">
-            <div className="service-card">
-              <div className="service-icon">🖥️</div>
-              <h3>CAD Software Integration</h3>
-              <p>
-                Seamlessly integrate with leading CAD software for precise orthodontic treatment planning.
-                Our platform supports all major STL file formats and provides real-time collaboration tools.
-              </p>
+    <section id="services" className="section">
+      <h2>Our Services</h2>
+      <div className="services-grid">
+        {services.map((service, index) => (
+          <div key={index} className="service-card">
+            <div className="service-image-container">
+              <img 
+                src={service.image} 
+                alt={service.title}
+                className="service-image"
+              />
             </div>
-
-            <div className="service-card">
-              <div className="service-icon">☁️</div>
-              <h3>Cloud-Based Platform</h3>
-              <p>
-                Access your cases anywhere, anytime with our secure cloud-based platform.
-                Share treatment plans with your team and clients effortlessly across all devices.
-              </p>
+            <div className="service-icon">
+              {service.icon}
             </div>
-
-            <div className="service-card">
-              <div className="service-icon">🎯</div>
-              <h3>Trial Case Offer</h3>
-              <p>
-                Start with confidence using our trial case program. Upload your first STL file and
-                receive a professional treatment plan at no cost to experience our quality firsthand.
-              </p>
-            </div>
+            <h3>{service.title}</h3>
+            <p>{service.description}</p>
           </div>
-
-          <div className="services-cta">
-            <button className="services-button">Reach out to us</button>
-          </div>
-        </div>
+        ))}
       </div>
     </section>
   );
