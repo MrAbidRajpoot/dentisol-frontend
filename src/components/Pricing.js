@@ -7,7 +7,7 @@ const Pricing = () => {
   const pricingPlans = [
     {
       title: "Crown & Bridge Design",
-      price: "$8-20 Per Case",
+      price: "$8-20 Per Unit",
       details: [
         "Crown & Bridge Design: US$8 per tooth",
         "Implant Design (Full Arch / All-on-X): US$20 per arch",

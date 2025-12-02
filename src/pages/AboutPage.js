@@ -6,7 +6,7 @@ const AboutPage = () => {
   return (
     <div className="page-container">
       <section id="about" className="section">
-        <h2>About Dentisol Laboratory</h2>
+        <h2>About Dentisol</h2>
         <div ref={ref} className={`about-content ${hasIntersected ? 'animate' : 'fade-in'}`}>
           <div className="about-text">
             <h3>Excellence in Digital Dental Manufacturing</h3>

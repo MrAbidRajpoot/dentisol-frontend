@@ -77,9 +77,12 @@ const Navigation = () => {
   return (
     <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
       <div className="nav-container">
-        <Link to="/" className="logo" onClick={() => { if (location.pathname === '/') scrollToSection('home'); }}>
-          <span className="logo-d">D</span>entisol.
-        </Link>
+        <div className="logo-container">
+          <img alt="Dentisol Logo" className="logo-image" src='/logo.png' width={60}/>
+          <Link to="/" className="logo" onClick={() => { if (location.pathname === '/') scrollToSection('home'); }}>
+            <span className="logo-d">D</span><span className="logo-text">entisol.</span>
+          </Link>
+        </div>
 
         <ul className={`nav-links ${isMenuOpen ? 'active' : ''}`}>
           <li>

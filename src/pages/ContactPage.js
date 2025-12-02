@@ -44,7 +44,7 @@ const ContactPage = () => {
             </p>
             <p>
               <FaEnvelope className="icon" />
-              <span>info@dentisol.com</span>
+              <span>info.dentisol@gmail.com</span>
             </p>
             <p>
               <FaClock className="icon" />
