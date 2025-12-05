@@ -13,7 +13,7 @@ const Services = () => {
       icon: <FaLaptop />,
       title: "CAD/CAM Digital Solutions",
       description: "Advanced digital workflow combining CAD/CAM technology with expert craftsmanship for precision-engineered restorations.",
-      image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      image: "/cad-cam.jpeg"
     },
     {
       icon: <FaTeeth />,

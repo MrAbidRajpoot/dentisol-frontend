@@ -5,7 +5,8 @@ const About = () => {
   const [ref, isIntersecting, hasIntersected] = useIntersectionObserver();
   return (
     <section id="about" className="section">
-      <h2>About Dentisol Laboratory</h2>
+      <h2>About Dentisol</h2>
+      <h3>From Scan To Smile</h3>
       <div ref={ref} className={`about-content ${hasIntersected ? 'animate' : 'fade-in'}`}>
         <div className="about-text">
           <h3>Excellence in Digital Dental Manufacturing</h3>

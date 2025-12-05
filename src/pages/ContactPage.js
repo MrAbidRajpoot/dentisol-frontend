@@ -36,11 +36,11 @@ const ContactPage = () => {
             <h3>Get In Touch</h3>
             <p>
               <FaMapMarkerAlt className="icon" />
-              <span>123 Dental Street, Healthcare District<br />New York, NY 10001</span>
+              <span>Allama iqbal town lahore</span>
             </p>
             <p>
               <FaPhone className="icon" />
-              <span>(555) 123-DENTIS</span>
+              <span>07777970074</span>
             </p>
             <p>
               <FaEnvelope className="icon" />

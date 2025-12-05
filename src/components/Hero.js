@@ -13,7 +13,7 @@ const Hero = () => {
       id="home" 
       className="hero"
       style={{
-        backgroundImage: `url(${process.env.PUBLIC_URL}/hero-image.webp)`
+        backgroundImage: `url(${process.env.PUBLIC_URL}/HeroSection.jpeg)`
       }}
     >
       <div className="hero-overlay"></div>
