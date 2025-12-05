@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import { FaMapMarkerAlt, FaPhone, FaEnvelope, FaClock } from 'react-icons/fa';
+import { FaMapMarkerAlt, FaPhone, FaEnvelope, FaClock, FaSpinner } from 'react-icons/fa';
 import useIntersectionObserver from '../hooks/useIntersectionObserver';
 
 const ContactPage = () => {
   const [ref, isIntersecting, hasIntersected] = useIntersectionObserver();
+  const [isLoading, setIsLoading] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -18,13 +19,47 @@ const ContactPage = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle form submission here
-    console.log('Form submitted:', formData);
-    // Reset form
-    setFormData({ name: '', email: '', phone: '', message: '' });
-    alert('Thank you for your message! We will get back to you soon.');
+    
+    // Set loading state
+    setIsLoading(true);
+    
+    // Prepare email content
+    const recipientEmail = 'info.dentisol@gmail.com';
+    const subject = encodeURIComponent(`Contact Form Submission from ${formData.name}`);
+    
+    // Format the email body with all form details
+    const emailBody = encodeURIComponent(
+      `Hello Dentisol Team,\n\n` +
+      `I would like to get in touch with you. Below are my details:\n\n` +
+      `Name: ${formData.name}\n` +
+      `Email: ${formData.email}\n` +
+      `Phone: ${formData.phone || 'Not provided'}\n\n` +
+      `Message:\n${formData.message}\n\n` +
+      `Best regards,\n${formData.name}`
+    );
+    
+    // Create mailto link
+    const mailtoLink = `mailto:${recipientEmail}?subject=${subject}&body=${emailBody}`;
+    
+    // Wait for React to render the loading state
+    await new Promise(resolve => {
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          setTimeout(resolve, 300);
+        });
+      });
+    });
+    
+    // Open default email client
+    window.location.href = mailtoLink;
+    
+    // Reset form and loading state after email client opens
+    setTimeout(() => {
+      setFormData({ name: '', email: '', phone: '', message: '' });
+      setIsLoading(false);
+    }, 2000);
   };
 
   return (
@@ -107,8 +142,19 @@ const ContactPage = () => {
               Note: Case file uploads available through our portal
             </p>
 
-            <button type="submit" className="submit-btn">
-              Send Message
+            <button 
+              type="submit" 
+              className="submit-btn" 
+              disabled={isLoading}
+            >
+              {isLoading ? (
+                <>
+                  <FaSpinner className="spinner-icon" />
+                  Opening Email...
+                </>
+              ) : (
+                'Send Message'
+              )}
             </button>
           </form>
         </div>

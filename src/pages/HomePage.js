@@ -5,6 +5,7 @@ import Services from '../components/Services';
 import CADProcess from '../components/CADProcess';
 import Benefits from '../components/Benefits';
 import AlignerDigital from '../components/AlignerDigital';
+import Testimonial from '../components/Testimonial';
 
 const HomePage = () => {
   return (
@@ -15,6 +16,7 @@ const HomePage = () => {
       <CADProcess />
       <AlignerDigital />
       <Benefits />
+      <Testimonial />
     </main>
   );
 };

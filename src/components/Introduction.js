@@ -60,7 +60,7 @@ const Introduction = () => {
             About <span className="introduction-underline">Dentisol</span>
           </h3>
           <h2 className="introduction-main-heading">
-            Innovation at the Heart of Every Smile
+          From Scan to Smile
           </h2>
           <p className="introduction-paragraph">
             Dentisol combines orthodontic expertise with advanced digital tools to deliver the most accurate treatment planning solutions in the industry.

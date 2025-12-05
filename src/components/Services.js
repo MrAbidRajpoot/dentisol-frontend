@@ -13,7 +13,7 @@ const Services = () => {
       icon: <FaLaptop />,
       title: "CAD/CAM Digital Solutions",
       description: "Advanced digital workflow combining CAD/CAM technology with expert craftsmanship for precision-engineered restorations.",
-      image: "/cad-cam.jpeg"
+      image: "/cad-cam2.jpg"
     },
     {
       icon: <FaTeeth />,
@@ -25,7 +25,7 @@ const Services = () => {
       icon: <FaCheckCircle />,
       title: "Expert Finishing & Quality Control",
       description: "Artistic detail, layering ceramics, perfecting morphology, and ensuring lifelike translucency with strict quality checks.",
-      image: "https://images.unsplash.com/photo-1582719471384-894fbb16e074?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      image: "/quality-service-photo.avif"
     }
   ];
 
@@ -39,7 +39,7 @@ const Services = () => {
               <img 
                 src={service.image} 
                 alt={service.title}
-                className="service-image"
+                className={`${service.title === "CAD/CAM Digital Solutions" ? "service-image-cad-cam" : "service-image"}`}
               />
             </div>
             <div className="service-icon">

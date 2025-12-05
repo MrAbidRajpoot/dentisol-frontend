@@ -9,7 +9,7 @@ const AboutPage = () => {
         <h2>About Dentisol</h2>
         <div ref={ref} className={`about-content ${hasIntersected ? 'animate' : 'fade-in'}`}>
           <div className="about-text">
-            <h3>Excellence in Digital Dental Manufacturing</h3>
+            <h3>From Scan to Smile</h3>
             <p>
               At Dentisol Laboratory, we combine digital innovation with handcrafted artistry to deliver 
               exceptional CAD/CAM dental laboratory services. Our advanced manufacturing capabilities 
