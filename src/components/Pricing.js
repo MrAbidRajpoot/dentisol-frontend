@@ -55,7 +55,7 @@ const Pricing = () => {
     
     },
       {
-      title: "Implant Bridge (per unit)",
+      title: "Implant Bridge",
       price: "$15 Per Unit",
       description: "Multi-implant restoration with precise path-of-insertion & occlusion.",
     
