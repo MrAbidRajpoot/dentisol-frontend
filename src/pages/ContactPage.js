@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { FaMapMarkerAlt, FaPhone, FaEnvelope, FaClock, FaSpinner } from 'react-icons/fa';
+import { FaMapMarkerAlt, FaPhone, FaEnvelope, FaClock, FaSpinner, FaWhatsapp } from 'react-icons/fa';
+import { toast } from 'react-toastify';
 import useIntersectionObserver from '../hooks/useIntersectionObserver';
 
 const ContactPage = () => {
@@ -25,41 +26,56 @@ const ContactPage = () => {
     // Set loading state
     setIsLoading(true);
     
-    // Prepare email content
-    const recipientEmail = 'info.dentisol@gmail.com';
-    const subject = encodeURIComponent(`Contact Form Submission from ${formData.name}`);
-    
-    // Format the email body with all form details
-    const emailBody = encodeURIComponent(
-      `Hello Dentisol Team,\n\n` +
-      `I would like to get in touch with you. Below are my details:\n\n` +
-      `Name: ${formData.name}\n` +
-      `Email: ${formData.email}\n` +
-      `Phone: ${formData.phone || 'Not provided'}\n\n` +
-      `Message:\n${formData.message}\n\n` +
-      `Best regards,\n${formData.name}`
-    );
-    
-    // Create mailto link
-    const mailtoLink = `mailto:${recipientEmail}?subject=${subject}&body=${emailBody}`;
-    
-    // Wait for React to render the loading state
-    await new Promise(resolve => {
-      requestAnimationFrame(() => {
-        requestAnimationFrame(() => {
-          setTimeout(resolve, 300);
-        });
+    try {
+      // Get API URL from environment variable or use default
+      const apiUrl = process.env.REACT_APP_API_URL || 'http://localhost:5000';
+      
+      // Send form data to backend API
+      const response = await fetch(`${apiUrl}/api/contact`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone || '',
+          message: formData.message,
+        }),
       });
-    });
-    
-    // Open default email client
-    window.location.href = mailtoLink;
-    
-    // Reset form and loading state after email client opens
-    setTimeout(() => {
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || 'Failed to send message');
+      }
+
+      // Success - show success toast and reset form
+      toast.success(data.message || 'Thank you for your message! We will get back to you soon.', {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+      });
       setFormData({ name: '', email: '', phone: '', message: '' });
+    } catch (error) {
+      // Error handling
+      console.error('Email sending failed:', error);
+      const errorMessage = error.message || 'Sorry, there was an error sending your message. Please try again or contact us directly at info.dentisol@gmail.com';
+      toast.error(errorMessage, {
+        position: "top-right",
+        autoClose: 6000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+      });
+    } finally {
+      // Reset loading state
       setIsLoading(false);
-    }, 2000);
+    }
   };
 
   return (
@@ -69,21 +85,40 @@ const ContactPage = () => {
         <div ref={ref} className={`contact-content ${hasIntersected ? 'animate' : 'fade-in'}`}>
           <div className="contact-info">
             <h3>Get In Touch</h3>
-            <p>
-              <FaMapMarkerAlt className="icon" />
-              <span>Allama iqbal town lahore</span>
-            </p>
-            <p>
-              <FaPhone className="icon" />
-              <span>07777970074</span>
-            </p>
+            <h5>Email:</h5>
             <p>
               <FaEnvelope className="icon" />
               <span>info.dentisol@gmail.com</span>
             </p>
+            <h5>Phone:</h5>
+            <p>
+              <FaPhone className="icon" />
+              <FaWhatsapp className="icon" />
+              <span>+44 7777970074 (UK)</span>
+            </p>
+            <p>
+              <FaPhone className="icon" />
+              <FaWhatsapp className="icon" />
+              <span>+92 3083443989 (Pakistan)</span>
+            </p>
+            <p>
+              <FaPhone className="icon" />
+              <FaWhatsapp className="icon" />
+              <span>+92 3004362803 (Pakistan)</span>
+            </p>
+            <h5>Address:</h5>
+            <p>
+              <FaMapMarkerAlt className="icon" />
+              <span>Allama Iqbal Town Lahore, Pakistan</span>
+            </p>
+            <p>
+              <FaMapMarkerAlt className="icon" />
+              <span>25, Bullingdon road, oxford, OX4 1QH, UK</span>
+            </p>
+            <h5>Opening Hours:</h5>
             <p>
               <FaClock className="icon" />
-              <span>Mon-Fri: 8:00 AM - 6:00 PM<br />Sat: 9:00 AM - 4:00 PM<br />Sun: Closed</span>
+              <span>Mon-Fri: 8:00 AM - 6:00 PM<br />Sat / Sun: Closed</span>
             </p>
           </div>
 
@@ -150,7 +185,7 @@ const ContactPage = () => {
               {isLoading ? (
                 <>
                   <FaSpinner className="spinner-icon" />
-                  Opening Email...
+                  Sending...
                 </>
               ) : (
                 'Send Message'

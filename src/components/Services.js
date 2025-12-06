@@ -39,7 +39,9 @@ const Services = () => {
               <img 
                 src={service.image} 
                 alt={service.title}
-                className={`${service.title === "CAD/CAM Digital Solutions" ? "service-image-cad-cam" : "service-image"}`}
+                className={`${service.title === "CAD/CAM Digital Solutions" ? "service-image-cad-cam" : 
+                              service.title === "Porcelain-Fused-to-Metal (PFM) Crown & Bridge" ? "service-image-fused-metal" :
+                              service.title === "Expert Finishing & Quality Control" ? "service-image-quality-control" : "service-image"}`}
               />
             </div>
             <div className="service-icon">

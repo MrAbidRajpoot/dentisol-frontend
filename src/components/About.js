@@ -11,7 +11,7 @@ const About = () => {
         <div className="about-text">
           <h3>Excellence in Digital Dental Manufacturing</h3>
           <p>
-            At Dentisol Laboratory, we combine digital innovation with handcrafted artistry to deliver 
+            At Dentisol, we combine digital innovation with handcrafted artistry to deliver 
             exceptional CAD/CAM dental laboratory services. Our advanced manufacturing capabilities 
             empower clinicians with precision-engineered restorations that meet the highest standards 
             of quality, fit, and esthetics.

@@ -80,7 +80,7 @@ const Navigation = () => {
         <div className="logo-container">
           <img alt="Dentisol Logo" className="logo-image" src='/FinalLogo.png' width={35}/>
           <Link to="/" className="logo" onClick={() => { if (location.pathname === '/') scrollToSection('home'); }}>
-            <span className="logo-d">D</span><span className="logo-text">entisol.</span>
+            <span className="logo-d">D</span><span className="logo-text">entisol</span>
           </Link>
         </div>
 

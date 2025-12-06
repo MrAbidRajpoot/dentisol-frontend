@@ -93,7 +93,7 @@ const Pricing = () => {
         </div>
       </div>
       <br />
-      <h4 style={{ fontSize: '1.5rem' }}>Prices as per complexity of the case are negotiable.</h4>
+      <h5 style={{ fontSize: '1rem' }}><i>"Prices are negotiable as per the complexity of the case."</i></h5>
     </section>
   );
 };

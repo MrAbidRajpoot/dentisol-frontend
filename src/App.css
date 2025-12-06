@@ -9,7 +9,7 @@
   --primary-color: #00A8A8;
   --secondary-color: #2C3E50;
   --accent-color: #FFFFFF;
-  --light-bg: #F8F9FA;
+  --light-bg: #E8F4F8;
   --text-color: #333;
   --text-light: #666;
   --shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
@@ -18,15 +18,18 @@
   --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+html {
+  scroll-behavior: smooth;
+  background-color: var(--light-bg);
+}
+
 body {
   font-family: 'Poppins', sans-serif;
   line-height: 1.6;
   color: var(--text-color);
   overflow-x: hidden;
-}
-
-html {
-  scroll-behavior: smooth;
+  background-color: var(--light-bg);
+  min-height: 100vh;
 }
 
 /* Loading Animation */
@@ -283,7 +286,7 @@ html {
   padding: 5rem 2rem;
   max-width: 1400px;
   margin: 0 auto;
-  background: var(--accent-color);
+  /* background: var(--accent-color); */
 }
 
 .introduction-content {
@@ -489,11 +492,29 @@ html {
   transition: var(--transition);
 }
 
+.service-image-fused-metal {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 10%;
+  transition: var(--transition);
+}
+
+.service-image-quality-control {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+  transition: var(--transition);
+}
+
 .service-card:hover .service-image {
   transform: scale(1.1);
 }
 
-.service-card:hover .service-image-cad-cam {
+.service-card:hover .service-image-cad-cam,
+.service-card:hover .service-image-fused-metal,
+.service-card:hover .service-image-quality-control {
   transform: scale(1.1);
 }
 
@@ -536,6 +557,7 @@ html {
   font-weight: 600;
   color: var(--secondary-color);
   margin-bottom: 1.5rem;
+  text-align: center;
 }
 
 .about-text p {
@@ -782,7 +804,7 @@ html {
 
 /* Benefits Section */
 .benefits-section {
-  background: var(--accent-color);
+  /* background: var(--accent-color); */
 }
 
 .benefits-content {
@@ -799,7 +821,7 @@ html {
 }
 
 .benefit-card {
-  background: var(--light-bg);
+  background: #FFFFFF;
   padding: 2rem;
   border-radius: var(--border-radius);
   box-shadow: var(--shadow);
@@ -1096,10 +1118,17 @@ html {
   }
 }
 
+/* App Container */
+.App {
+  background-color: var(--light-bg);
+  min-height: 100vh;
+}
+
 /* Page Container */
 .page-container {
   min-height: calc(100vh - 200px);
   padding-top: 80px;
+  background-color: var(--light-bg);
 }
 
 /* Testimonial Section */
@@ -1201,6 +1230,42 @@ html {
   color: var(--text-dark);
   margin: 0;
   font-weight: 500;
+}
+
+/* Toast Notification Styles */
+.Toastify__toast {
+  font-family: 'Poppins', sans-serif;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-hover);
+}
+
+.Toastify__toast--success {
+  background: linear-gradient(135deg, #00A8A8, #2C3E50);
+  color: var(--accent-color);
+}
+
+.Toastify__toast--error {
+  background: linear-gradient(135deg, #dc3545, #c82333);
+  color: var(--accent-color);
+}
+
+.Toastify__toast-body {
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 0.5rem;
+}
+
+.Toastify__progress-bar {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.Toastify__close-button {
+  color: var(--accent-color);
+  opacity: 0.8;
+}
+
+.Toastify__close-button:hover {
+  opacity: 1;
 }
 
 /* Utility Classes */

@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import './App.css';
 import Navigation from './components/Navigation';
 import HomePage from './pages/HomePage';
@@ -38,14 +40,26 @@ function App() {
           <Route path="/contact" element={<ContactPage />} />
         </Routes>
         <footer style={{
-          background: 'var(--secondary-color)',
+          background: 'var(--primary-color)',
           color: 'var(--accent-color)',
           textAlign: 'center',
-          padding: '2rem',
-          marginTop: '4rem'
+          padding: '2px',
+          // marginTop: '4rem'
         }}>
-          <p>&copy; 2025 Dentisol Laboratory. All rights reserved.</p>
+          <p>&copy; 2025 Dentisol. All rights reserved.</p>
         </footer>
+        <ToastContainer
+          position="top-right"
+          autoClose={5000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="light"
+        />
       </div>
     </Router>
   );

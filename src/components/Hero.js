@@ -19,8 +19,7 @@ const Hero = () => {
       <div className="hero-overlay"></div>
       <div className="hero-content">
         <h1 className="hero-title">
-          Precision Craftsmanship<br />
-          Meets Digital Innovation
+          <i>From Scan to Smile</i>
         </h1>
         <p className="hero-subtitle">
           Advanced CAD/CAM dental laboratory services delivering precision-engineered restorations, 
