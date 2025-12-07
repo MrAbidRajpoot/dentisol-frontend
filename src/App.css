@@ -923,6 +923,13 @@ body {
   margin-bottom: 1.5rem;
 }
 
+.pricing-card h4 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--secondary-color);
+  margin-top: -1.5rem;
+}
+
 .pricing-price {
   font-size: 2rem;
   font-weight: 700;

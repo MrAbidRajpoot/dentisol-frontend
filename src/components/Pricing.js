@@ -19,7 +19,8 @@ const Pricing = () => {
       
     },
     {
-      title: "Single Crown Design",
+      title: "Single Crown ",
+      subTitle: "Design",
       price: "$5 Single Unit",
       description: "Posterior, premolar, or anterior crown design with occlusal & proximal adjustments.",
      
@@ -55,7 +56,8 @@ const Pricing = () => {
     
     },
       {
-      title: "Implant Bridge",
+      title: "Implant ",
+      subTitle: "Bridge",
       price: "$15 Per Unit",
       description: "Multi-implant restoration with precise path-of-insertion & occlusion.",
     
@@ -73,6 +75,7 @@ const Pricing = () => {
           {pricingPlans.map((plan, index) => (
             <div key={index} className="pricing-card">
               <h3>{plan.title}</h3>
+              <h4>{plan?.subTitle}</h4>
               <div className="pricing-price">{plan.price}</div>
 
              
