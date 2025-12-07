@@ -40,7 +40,7 @@ function App() {
           <Route path="/contact" element={<ContactPage />} />
         </Routes>
         <footer style={{
-          background: 'var(--primary-color)',
+          background: 'linear-gradient(135deg, #00A8A8, #2C3E50)',
           color: 'var(--accent-color)',
           textAlign: 'center',
           padding: '2px',

@@ -174,7 +174,7 @@ const ContactPage = () => {
               ></textarea>
             </div>
             <p style={{ fontSize: '0.9rem', color: 'var(--text-light)', marginTop: '-0.5rem', marginBottom: '1rem' }}>
-              Note: Case file uploads available through our portal
+              <i>Note: Case file uploads available through email.</i>
             </p>
 
             <button 

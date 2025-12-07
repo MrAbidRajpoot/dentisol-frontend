@@ -77,11 +77,18 @@ const Navigation = () => {
   return (
     <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
       <div className="nav-container">
+        <div>
         <div className="logo-container">
           <img alt="Dentisol Logo" className="logo-image" src='/FinalLogo.png' width={35}/>
           <Link to="/" className="logo" onClick={() => { if (location.pathname === '/') scrollToSection('home'); }}>
-            <span className="logo-d">D</span><span className="logo-text">entisol</span>
+            <span className="logo-text">Dentisol</span>
           </Link>
+        </div>
+        <div>
+          <p style={{textAlign: 'center' , marginLeft: '35px', marginTop: '-13px', fontSize: '10px'}}>
+          <i><span className="logo-text">From Scan to Smile</span></i>
+          </p>
+        </div>
         </div>
 
         <ul className={`nav-links ${isMenuOpen ? 'active' : ''}`}>

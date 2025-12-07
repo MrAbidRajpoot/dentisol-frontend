@@ -99,8 +99,13 @@ body {
   gap: 0.5rem;
 }
 
+.logo-image {
+  width: 27px;
+  height: 30px;
+}
+
 .logo {
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   font-weight: 700;
   color: var(--secondary-color);
   text-decoration: none;
@@ -108,9 +113,10 @@ body {
   position: relative;
   display: inline-flex;
   align-items: center;
+  margin-top: -7px;
 }
 
-.logo-d {
+/* .logo-d {
   background: linear-gradient(135deg, #00A8A8, #2C3E50);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -120,7 +126,7 @@ body {
   font-size: inherit;
   font-weight: inherit;
   line-height: inherit;
-}
+} */
 
 .logo-text {
   background: linear-gradient(135deg, #00A8A8, #2C3E50);
