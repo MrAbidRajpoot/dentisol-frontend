@@ -99,12 +99,12 @@ const ContactPage = () => {
             <p>
               <FaPhone className="icon" />
               <FaWhatsapp className="icon" />
-              <span>+92 3083443989 (Pakistan)</span>
+              <span>+92 3083443989 (Pk)</span>
             </p>
             <p>
               <FaPhone className="icon" />
               <FaWhatsapp className="icon" />
-              <span>+92 3004362803 (Pakistan)</span>
+              <span>+92 3004362803 (Pk)</span>
             </p>
             <h5>Address:</h5>
             <p>
