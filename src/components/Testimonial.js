@@ -40,6 +40,7 @@ const Testimonial = () => {
           </div>
         </div>
       </div>
+      <div className="testimonial-divider"></div>
       <div className="testimonial-container">
         <h2 className="testimonial-heading">Dr. Ahmer Mohsin Recommends Dentisol</h2>
         <div className="testimonial-stars">
@@ -67,6 +68,7 @@ const Testimonial = () => {
           </div>
         </div>
       </div>
+      <div className="testimonial-divider"></div>
       <div className="testimonial-container">
         <h2 className="testimonial-heading">Dr. Ehsan Hashmi Recommends Dentisol</h2>
         <div className="testimonial-stars">

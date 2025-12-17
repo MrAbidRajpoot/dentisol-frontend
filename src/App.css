@@ -1151,6 +1151,15 @@ body {
   width: 100%;
 }
 
+.testimonial-divider {
+  height: 2px;
+  width: 80%;
+  background: #dae4e8;
+  border: none;
+  margin: 3rem auto;
+  /* opacity: 0.3; */
+}
+
 .testimonial-container {
   max-width: 900px;
   margin: 0 auto;
@@ -1188,7 +1197,7 @@ body {
   color: var(--secondary-color);
   line-height: 1.8;
   max-width: 800px;
-  margin: 0 auto 3rem auto;
+  margin: 0 auto 1rem auto;
   padding: 0 1rem;
 }
 
