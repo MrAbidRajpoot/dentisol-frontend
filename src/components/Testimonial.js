@@ -54,7 +54,7 @@ const Testimonial = () => {
           "Dentisol delivers exactly what modern clinics need—precision, speed, and reliability in digital aligner and CAD/CAM services.We trust Dentisol with our most demanding cases. Their digital aligner setups and CAD/CAM solutions consistently meet high clinical standards."
         </p>
         <div className="testimonial-author">
-          <img 
+        <img 
             src="/testimonial2.jpg" 
             alt="Dr. Ahmer Mohsin" 
             className="testimonial-image"
